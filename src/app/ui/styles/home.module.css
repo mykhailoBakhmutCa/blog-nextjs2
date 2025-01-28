@@ -1,10 +1,10 @@
-.text_wisteria {
-  color: #8e44ad;
+.text_green {
+  color: #16a085;
 }
 
-.bg_wisteria {
-  /* background-color: #8e44ad; */
-  background-color: red;
+.bg_green {
+  background-color: #16a085;
+  /* background-color: red; */
 }
 
 .fit_content {
