@@ -17,7 +17,14 @@ export default async function Page() {
       </Link>
       <h1>Posts</h1>
       {posts?.map(post => (
-        <Post key={post.id} {...post} />
+        <Post
+          id={""}
+          title={""}
+          content={""}
+          date={""}
+          key={post.id}
+          {...post}
+        />
       ))}
     </>
   );

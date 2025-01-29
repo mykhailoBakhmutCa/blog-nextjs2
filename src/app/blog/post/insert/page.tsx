@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,7 +12,9 @@ export default function Page() {
     date: new Date().toISOString().slice(0, 10),
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
@@ -20,7 +22,7 @@ export default function Page() {
     }));
   };
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const uuid = uuidv4();
     fetch(
@@ -70,7 +72,7 @@ export default function Page() {
           <textarea
             id="content"
             name="content"
-            rows="4"
+            rows={4}
             value={formData.content}
             onChange={handleChange}
             className="w-full border-2 border-purple-100 p-2 rounded-md focus:border-purple-200 focus:outline-none"
