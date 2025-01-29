@@ -6,6 +6,7 @@ import { getPosts } from "@/app/lib/data";
 export default async function Page({ params }: { params: { id: string } }) {
   const posts = await getPosts();
   const post = posts?.find(post => post.id === params.id);
+  // const post = posts?.find(post => post.id === "");
 
   if (!post) {
     notFound();
