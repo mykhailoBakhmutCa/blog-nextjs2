@@ -23,6 +23,7 @@ export async function getPosts() {
     const data = await sql`SELECT * FROM posts`;
     console.log(data.rows);
     return data.rows;
+    // return data;
   } catch (error) {
     console.log("Error getting posts", error);
   }
